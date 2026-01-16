@@ -10,30 +10,29 @@ from a2a.types import (
     AgentSkill,
 )
 
-from executor import Executor
+from executor import PurpleExecutor
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run the A2A agent.")
+    parser = argparse.ArgumentParser(description="Run the purple solver agent.")
     parser.add_argument("--host", type=str, default="127.0.0.1", help="Host to bind the server")
-    parser.add_argument("--port", type=int, default=9009, help="Port to bind the server")
+    parser.add_argument("--port", type=int, default=8000, help="Port to bind the server")
     parser.add_argument("--card-url", type=str, help="URL to advertise in the agent card")
     args = parser.parse_args()
 
-    # Fill in your agent card
-    # See: https://a2a-protocol.org/latest/tutorials/python/3-agent-skills-and-card/
-    
     skill = AgentSkill(
-        id="",
-        name="",
-        description="",
-        tags=[],
-        examples=[]
+        id="rooms_solver",
+        name="Rooms Puzzle Solver",
+        description="Solves Rooms navigation puzzles",
+        tags=["solver", "navigation", "planning"],
+        examples=[
+            "Solve the rooms puzzle"
+        ]
     )
 
     agent_card = AgentCard(
-        name="",
-        description="",
+        name="Baseline Rooms Solver",
+        description="A baseline purple agent that attempts to solve Rooms navigation puzzles",
         url=args.card_url or f"http://{args.host}:{args.port}/",
         version='1.0.0',
         default_input_modes=['text'],
@@ -43,7 +42,7 @@ def main():
     )
 
     request_handler = DefaultRequestHandler(
-        agent_executor=Executor(),
+        agent_executor=PurpleExecutor(),
         task_store=InMemoryTaskStore(),
     )
     server = A2AStarletteApplication(
