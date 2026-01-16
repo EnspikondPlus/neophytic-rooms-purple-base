@@ -43,24 +43,26 @@ jobs:
           load: true
           platforms: linux/amd64
 
-      - name: Start agent container
+      - name: Start agent container for smoke test
         env:
           SECRETS_JSON: ${{ toJson(secrets) }}
         run: |
           echo "$SECRETS_JSON" | jq -r 'to_entries[] | "\(.key)=\(.value)"' > .env
           
-          # Start container on port 8000
+          # Run container
+          # ADDED: --card-url argument
           docker run -d \
             -p 8000:8000 \
             --name agent-container \
             --env-file .env \
             $(echo "${{ steps.meta.outputs.tags }}" | head -n1) \
-            --host 0.0.0.0 --port 8000
+            --host 0.0.0.0 --port 8000 --card-url http://localhost:8000
           
-          # Wait for it to be ready
           echo "Waiting for agent to start..."
-          timeout 30 bash -c 'until curl -sf http://localhost:8000/.well-known/agent-card.json > /dev/null; do sleep 1; done'
+          # INCREASED: timeout from 30 to 60 seconds
+          timeout 60 bash -c 'until curl -sf http://localhost:8000/.well-known/agent-card.json > /dev/null; do sleep 1; done'
           echo "Agent is online!"
+  
       - name: Install dependencies and run tests
         run: |
           uv sync --extra test
