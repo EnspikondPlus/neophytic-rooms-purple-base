@@ -22,11 +22,6 @@ jobs:
       - name: Set up uv
         uses: astral-sh/setup-uv@v4
 
-      - name: Install dependencies and run unit tests
-        run: |
-          uv sync --extra test
-          uv run pytest -v
-
       - name: Extract metadata for Docker
         id: meta
         uses: docker/metadata-action@v5
@@ -48,13 +43,13 @@ jobs:
           load: true
           platforms: linux/amd64
 
-      - name: Start agent container for smoke test
+      - name: Start agent container
         env:
           SECRETS_JSON: ${{ toJson(secrets) }}
         run: |
           echo "$SECRETS_JSON" | jq -r 'to_entries[] | "\(.key)=\(.value)"' > .env
           
-          # Run on standard Purple port 8000
+          # Start container on port 8000
           docker run -d \
             -p 8000:8000 \
             --name agent-container \
@@ -62,13 +57,20 @@ jobs:
             $(echo "${{ steps.meta.outputs.tags }}" | head -n1) \
             --host 0.0.0.0 --port 8000
           
+          # Wait for it to be ready
           echo "Waiting for agent to start..."
           timeout 30 bash -c 'until curl -sf http://localhost:8000/.well-known/agent-card.json > /dev/null; do sleep 1; done'
-          echo "Agent is healthy!"
+          echo "Agent is online!"
+      - name: Install dependencies and run tests
+        run: |
+          uv sync --extra test
+          # Now pytest can successfully hit localhost:8000
+          uv run pytest -v
 
       - name: Stop container
         if: always()
         run: |
+          echo "=== Agent Logs ==="
           docker logs agent-container || true
           docker stop agent-container || true
 
@@ -83,11 +85,3 @@ jobs:
       - name: Push Docker image
         if: success() && github.event_name != 'pull_request'
         run: docker push --all-tags ghcr.io/${GITHUB_REPOSITORY,,}
-
-      - name: Output image digest
-        if: success() && github.event_name != 'pull_request'
-        run: |
-          echo "## Docker Image Published :rocket:" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Tags:**" >> $GITHUB_STEP_SUMMARY
-          echo "${{ steps.meta.outputs.tags }}" >> $GITHUB_STEP_SUMMARY
