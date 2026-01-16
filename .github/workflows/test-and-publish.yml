@@ -22,19 +22,15 @@ jobs:
       - name: Set up uv
         uses: astral-sh/setup-uv@v4
 
-      # 1. Run Unit Tests (Fast, no container needed)
-      # This checks your logic files (executor.py, etc.)
       - name: Install dependencies and run unit tests
         run: |
           uv sync --extra test
           uv run pytest -v
 
-      # 2. Prepare Docker Metadata (Fixes casing automatically)
       - name: Extract metadata for Docker
         id: meta
         uses: docker/metadata-action@v5
         with:
-          # This action automatically lowercases the repo name
           images: ghcr.io/${{ github.repository }}
           tags: |
             type=ref,event=pr
@@ -42,7 +38,6 @@ jobs:
             type=semver,pattern={{major}}
             type=raw,value=latest,enable={{is_default_branch}}
 
-      # 3. Build and Load (Don't push yet)
       - name: Build Docker image
         uses: docker/build-push-action@v5
         with:
@@ -53,8 +48,6 @@ jobs:
           load: true
           platforms: linux/amd64
 
-      # 4. Smoke Test: Start Container & Verify it Responds
-      # CHANGED: Port 9009 -> 8000 (Standard Purple Port)
       - name: Start agent container for smoke test
         env:
           SECRETS_JSON: ${{ toJson(secrets) }}
@@ -87,10 +80,8 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # 5. Push (Only if tests passed)
       - name: Push Docker image
         if: success() && github.event_name != 'pull_request'
-        # Uses the specific lowercase env var syntax for bash
         run: docker push --all-tags ghcr.io/${GITHUB_REPOSITORY,,}
 
       - name: Output image digest
