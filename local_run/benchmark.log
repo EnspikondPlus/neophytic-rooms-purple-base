@@ -1,0 +1,2228 @@
+
+📨 Sending benchmark request to green agent...
+   Config: {
+  "generate": false,
+  "count": 3,
+  "difficulty": "tutorial"
+}
+
+  [  working] Running 3 room systems. Good luck!
+  [  working] [1/3] Starting run with encoding 2898000006080800000000000
+  [  working] [1/3] Step 0: Sending initial observation to solver
+  [  working] [1/3] Step 1: Executed move, loss: -0.00
+  [  working] [1/3] Step 2: Executed move, loss: -0.00
+  [  working] [1/3] Step 3: Executed move, loss: -0.00
+  [  working] [1/3] Step 4: Executed move, loss: -0.00
+  [  working] [1/3] Step 5: Executed move, loss: -0.00
+  [  working] [1/3] Step 6: Executed move, loss: -0.00
+  [  working] [1/3] Step 7: Executed commit, loss: -0.00
+  [  working] [1/3] Step 8: Executed inspect, loss: -1.00
+  [  working] [1/3] Step 9: Executed inspect, loss: -2.00
+  [  working] [1/3] Step 10: Executed inspect, loss: -3.00
+  [  working] [1/3] Step 11: Executed inspect, loss: -4.00
+  [  working] [1/3] Step 12: Executed inspect, loss: -5.00
+  [  working] [1/3] Step 13: Executed inspect, loss: -6.00
+  [  working] [1/3] Step 14: Executed inspect, loss: -7.00
+  [  working] [1/3] Step 15: Executed inspect, loss: -8.00
+  [  working] [1/3] Step 16: Executed inspect, loss: -9.00
+  [  working] [1/3] Step 17: Executed inspect, loss: -10.00
+  [  working] [1/3] Step 18: Executed inspect, loss: -11.00
+  [  working] [1/3] Step 19: Executed inspect, loss: -12.00
+  [  working] [1/3] Step 20: Executed inspect, loss: -13.00
+  [  working] [1/3] Step 21: Executed inspect, loss: -14.00
+  [  working] [1/3] Step 22: Executed inspect, loss: -15.00
+  [  working] [1/3] Step 23: Executed inspect, loss: -16.00
+  [  working] [1/3] Step 24: Executed inspect, loss: -17.00
+  [  working] [1/3] Step 25: Executed inspect, loss: -18.00
+  [  working] [1/3] Step 26: Executed inspect, loss: -19.00
+  [  working] [1/3] Step 27: Executed inspect, loss: -20.00
+  [  working] [1/3] Step 28: Executed inspect, loss: -21.00
+  [  working] [1/3] Step 29: Executed inspect, loss: -22.00
+  [  working] [1/3] Step 30: Executed inspect, loss: -23.00
+  [  working] [1/3] Step 31: Executed inspect, loss: -24.00
+  [  working] [1/3] Step 32: Executed inspect, loss: -25.00
+  [  working] [1/3] Step 33: Executed inspect, loss: -26.00
+  [  working] [1/3] Step 34: Executed inspect, loss: -27.00
+  [  working] [1/3] Step 35: Executed inspect, loss: -28.00
+  [  working] [1/3] Step 36: Executed inspect, loss: -29.00
+  [  working] [1/3] Step 37: Executed inspect, loss: -30.00
+  [  working] [1/3] Step 38: Executed inspect, loss: -31.00
+  [  working] [2/3] Starting run with encoding 08890000040a0400000000000
+  [  working] [2/3] Step 0: Sending initial observation to solver
+  [  working] [2/3] Step 1: Executed move, loss: -3.00
+  [  working] [2/3] Step 2: Executed move, loss: -6.00
+  [  working] [2/3] Step 3: Executed commit, loss: -6.00
+  [  working] [2/3] Step 4: Executed move, loss: -7.00
+  [  working] [2/3] Step 5: Executed move, loss: -8.00
+  [  working] [3/3] Starting run with encoding 0890000004080000000000000
+  [  working] [3/3] Step 0: Sending initial observation to solver
+  [  working] [3/3] Step 1: Executed move, loss: -3.00
+  [  working] [3/3] Step 2: Executed commit, loss: -3.00
+  [  working] [3/3] Step 3: Executed move, loss: -4.00
+  [  working] [3/3] Step 3: Executed move, loss: -4.00
+
+======================================================================
+📋 Artifact: Rooms Benchmark — Full Summary
+======================================================================
+========== Rooms Benchmark — Full Summary ==========
+
+Per-Run Results:
+  Run 1: ❌ Failed | Loss: -31.00 | Steps: 31/30
+  Run 2: ✅ Success | Loss: -8.00 | Steps: 2/30
+  Run 3: ✅ Success | Loss: -4.00 | Steps: 1/30
+
+----------------------------------------------------
+Aggregate Statistics:
+  Total Runs:      3
+  Successful:      2
+  Failed:          1
+  Errored:         0
+  Success Rate:    66.7%
+  Avg Loss:        -14.33
+  Avg Steps Used:  11.3
+====================================================
+{
+  "total_runs": 3,
+  "successful_runs": 2,
+  "errored_runs": 0,
+  "success_rate": 0.6666666666666666,
+  "avg_loss": -14.333333333333334,
+  "avg_steps": 11.333333333333334,
+  "max_steps": 30,
+  "per_run_results": [
+    {
+      "run_index": 0,
+      "success": false,
+      "total_loss": -31.0,
+      "steps_taken": 31,
+      "max_steps": 30,
+      "encoding": "2898000006080800000000000",
+      "final_observation": {
+        "done": true,
+        "reward": -31.0,
+        "metadata": {},
+        "current_room": 2,
+        "committed": 1,
+        "failure_last": 1,
+        "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+        "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+        "room_known_connects": [
+          [-1, -1, 1, -1, -1, -1, -1, -1],
+          [-1, -1, 0, -1, -1, -1, -1, -1],
+          [1, 0, 0, 0, 0, 0, 0, 0],
+          [-1, -1, 0, -1, -1, -1, -1, -1],
+          [-1, -1, 0, -1, -1, -1, -1, -1],
+          [-1, -1, 0, -1, -1, -1, -1, -1],
+          [-1, -1, 0, -1, -1, -1, -1, -1],
+          [-1, -1, 0, -1, -1, -1, -1, -1]
+        ],
+        "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+        "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+        "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+        "current_keys": 0,
+        "actions_remaining": -1,
+        "obs_inspect_weight": 3.0
+      },
+      "conversation_history": [
+        {
+          "step": 0,
+          "observation": {
+            "done": false,
+            "reward": -0.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 0,
+            "failure_last": 0,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 0, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 30,
+            "obs_inspect_weight": 3.0
+          },
+          "prompt": "You are solving a Rooms navigation puzzle. Current state (Move 0):\n\nCurrent Room: 2\nPhase: Observation\nKeys Held: 0\nSteps Remaining: 30\n\nRoom Status (1 means true and 0 means false):\nRooms Visited: [0, 0, 1, 0, 0, 0, 0, 0]\nRooms Inspected: [0, 0, 0, 0, 0, 0, 0, 0]\n\nRoom Properties (1 means true and 0 means false for inspected rooms; -1 means unknown):\n- Locked: [-1, -1, -1, -1, -1, -1, -1, -1]\n- Has Key: [-1, -1, -1, -1, -1, -1, -1, -1]\n- Is Exit: [-1, -1, -1, -1, -1, -1, -1, -1]\n\nYou are in a system of up to 8 rooms (indexed 0-7) that are all connected in one graph. Your goal is to find (and if needed, unlock) the exit room and leave.\nOn each turn, you can do one of: MOVE, INSPECT, GETKEY, USEKEY, COMMIT.\nMOVE to move into a room that is connected to your current room. In Observation phase, moving into a room automatically performs the INSPECT action in the room you move to, and you can move through locked rooms, but moves are more costly. In Execution phase, you may not MOVE if your current room is locked, unless it is back to a previous room you have visited.\nINSPECT your current room to know which rooms it connects to, if it is locked, and if it contains a key inside.\nGETKEY to pick-up a key in your current room, if it has a key.\nUSEKEY to use a key in your current room to unlock it if it was locked.\nCOMMIT to change the phase from Observation to Execution. This cannot be undone.\n\nActions in the Observation phase do not use your remaining steps, but are more costly than actions in the Execution phase. \nActions in the Execution phase use one step per action, even if that action fails. If you run out of steps, you fail.\n\nRules and strategy reminders:\n1. In Observation phase:\n   - You can MOVE to any connected room to explore, and automatically INSPECT that room without further command use.\n   - You cannot GETKEY, USEKEY, INSPECT at any time.\n   - COMMIT switches to Execution phase, and you are reset to your starting room.\n   - Keep track of keys, locked rooms, and exits. This information may go away during Execution phase.\n2. In Execution phase:\n   - You may MOVE to adjacent rooms if your current room is unlocked, or if you are moving into a room you have already visited.\n   - INSPECT the current room if it has not been inspected.\n   - USEKEY to unlock a locked room only if you have a key.\n   - GETKEY to pick up a key in the current room if one exists.\n3. The goal is to reach the exit room and unlock it if necessary.\n4. Avoid unnecessary moves that increase weighted steps used.\n\nAvailable commands:\n- MOVE <room_number>: Move to an adjacent room, rooms are numbered 0-7\n- INSPECT: Inspect current room (only in execution phase)\n- USEKEY: Use a key to unlock current room\n- GETKEY: Pick up key in current room\n- COMMIT: Switch from observation to execution phase\n\nRespond only with a JSON object containing your action, for example:\n{\"command\": \"MOVE\", \"target_room\": 1}\nor\n{\"command\": \"INSPECT\"}\nor\n{\"command\": \"USEKEY\"}\nor\n{\"command\": \"GETKEY\"}\nor\n{\"command\": \"COMMIT\"}\n"
+        },
+        {
+          "step": 0,
+          "solver_response": "{\"command\": \"MOVE\", \"target_room\": 1}"
+        },
+        {
+          "step": 0,
+          "action": {
+            "metadata": {},
+            "command": "move",
+            "target_room": 1
+          }
+        },
+        {
+          "step": 1,
+          "observation": {
+            "done": false,
+            "reward": -0.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 0,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 0, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 30,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -0.0
+        },
+        {
+          "step": 1,
+          "solver_response": "{\"command\": \"MOVE\", \"target_room\": 3}"
+        },
+        {
+          "step": 1,
+          "action": {
+            "metadata": {},
+            "command": "move",
+            "target_room": 3
+          }
+        },
+        {
+          "step": 2,
+          "observation": {
+            "done": false,
+            "reward": -0.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 0,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 0, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 30,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -0.0
+        },
+        {
+          "step": 2,
+          "solver_response": "{\"command\": \"MOVE\", \"target_room\": 4}"
+        },
+        {
+          "step": 2,
+          "action": {
+            "metadata": {},
+            "command": "move",
+            "target_room": 4
+          }
+        },
+        {
+          "step": 3,
+          "observation": {
+            "done": false,
+            "reward": -0.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 0,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 0, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 30,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -0.0
+        },
+        {
+          "step": 3,
+          "solver_response": "{\"command\": \"MOVE\", \"target_room\": 5}"
+        },
+        {
+          "step": 3,
+          "action": {
+            "metadata": {},
+            "command": "move",
+            "target_room": 5
+          }
+        },
+        {
+          "step": 4,
+          "observation": {
+            "done": false,
+            "reward": -0.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 0,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 0, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 30,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -0.0
+        },
+        {
+          "step": 4,
+          "solver_response": "{\"command\": \"MOVE\", \"target_room\": 6}"
+        },
+        {
+          "step": 4,
+          "action": {
+            "metadata": {},
+            "command": "move",
+            "target_room": 6
+          }
+        },
+        {
+          "step": 5,
+          "observation": {
+            "done": false,
+            "reward": -0.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 0,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 0, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 30,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -0.0
+        },
+        {
+          "step": 5,
+          "solver_response": "{\"command\": \"MOVE\", \"target_room\": 7}"
+        },
+        {
+          "step": 5,
+          "action": {
+            "metadata": {},
+            "command": "move",
+            "target_room": 7
+          }
+        },
+        {
+          "step": 6,
+          "observation": {
+            "done": false,
+            "reward": -0.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 0,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 0, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 30,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -0.0
+        },
+        {
+          "step": 6,
+          "solver_response": "{\"command\": \"COMMIT\"}"
+        },
+        {
+          "step": 6,
+          "action": {
+            "metadata": {},
+            "command": "commit",
+            "target_room": null
+          }
+        },
+        {
+          "step": 7,
+          "observation": {
+            "done": false,
+            "reward": -0.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 0,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 0, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 30,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -0.0
+        },
+        {
+          "step": 7,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 7,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 8,
+          "observation": {
+            "done": false,
+            "reward": -1.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 0,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 29,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -1.0
+        },
+        {
+          "step": 8,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 8,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 9,
+          "observation": {
+            "done": false,
+            "reward": -2.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 28,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -2.0
+        },
+        {
+          "step": 9,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 9,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 10,
+          "observation": {
+            "done": false,
+            "reward": -3.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 27,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -3.0
+        },
+        {
+          "step": 10,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 10,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 11,
+          "observation": {
+            "done": false,
+            "reward": -4.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 26,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -4.0
+        },
+        {
+          "step": 11,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 11,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 12,
+          "observation": {
+            "done": false,
+            "reward": -5.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 25,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -5.0
+        },
+        {
+          "step": 12,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 12,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 13,
+          "observation": {
+            "done": false,
+            "reward": -6.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 24,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -6.0
+        },
+        {
+          "step": 13,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 13,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 14,
+          "observation": {
+            "done": false,
+            "reward": -7.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 23,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -7.0
+        },
+        {
+          "step": 14,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 14,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 15,
+          "observation": {
+            "done": false,
+            "reward": -8.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 22,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -8.0
+        },
+        {
+          "step": 15,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 15,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 16,
+          "observation": {
+            "done": false,
+            "reward": -9.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 21,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -9.0
+        },
+        {
+          "step": 16,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 16,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 17,
+          "observation": {
+            "done": false,
+            "reward": -10.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 20,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -10.0
+        },
+        {
+          "step": 17,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 17,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 18,
+          "observation": {
+            "done": false,
+            "reward": -11.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 19,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -11.0
+        },
+        {
+          "step": 18,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 18,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 19,
+          "observation": {
+            "done": false,
+            "reward": -12.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 18,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -12.0
+        },
+        {
+          "step": 19,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 19,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 20,
+          "observation": {
+            "done": false,
+            "reward": -13.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 17,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -13.0
+        },
+        {
+          "step": 20,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 20,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 21,
+          "observation": {
+            "done": false,
+            "reward": -14.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 16,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -14.0
+        },
+        {
+          "step": 21,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 21,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 22,
+          "observation": {
+            "done": false,
+            "reward": -15.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 15,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -15.0
+        },
+        {
+          "step": 22,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 22,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 23,
+          "observation": {
+            "done": false,
+            "reward": -16.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 14,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -16.0
+        },
+        {
+          "step": 23,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 23,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 24,
+          "observation": {
+            "done": false,
+            "reward": -17.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 13,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -17.0
+        },
+        {
+          "step": 24,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 24,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 25,
+          "observation": {
+            "done": false,
+            "reward": -18.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 12,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -18.0
+        },
+        {
+          "step": 25,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 25,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 26,
+          "observation": {
+            "done": false,
+            "reward": -19.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 11,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -19.0
+        },
+        {
+          "step": 26,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 26,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 27,
+          "observation": {
+            "done": false,
+            "reward": -20.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 10,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -20.0
+        },
+        {
+          "step": 27,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 27,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 28,
+          "observation": {
+            "done": false,
+            "reward": -21.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 9,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -21.0
+        },
+        {
+          "step": 28,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 28,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 29,
+          "observation": {
+            "done": false,
+            "reward": -22.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 8,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -22.0
+        },
+        {
+          "step": 29,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 29,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 30,
+          "observation": {
+            "done": false,
+            "reward": -23.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 7,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -23.0
+        },
+        {
+          "step": 30,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 30,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 31,
+          "observation": {
+            "done": false,
+            "reward": -24.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 6,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -24.0
+        },
+        {
+          "step": 31,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 31,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 32,
+          "observation": {
+            "done": false,
+            "reward": -25.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 5,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -25.0
+        },
+        {
+          "step": 32,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 32,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 33,
+          "observation": {
+            "done": false,
+            "reward": -26.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 4,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -26.0
+        },
+        {
+          "step": 33,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 33,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 34,
+          "observation": {
+            "done": false,
+            "reward": -27.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 3,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -27.0
+        },
+        {
+          "step": 34,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 34,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 35,
+          "observation": {
+            "done": false,
+            "reward": -28.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 2,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -28.0
+        },
+        {
+          "step": 35,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 35,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 36,
+          "observation": {
+            "done": false,
+            "reward": -29.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 1,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -29.0
+        },
+        {
+          "step": 36,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 36,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 37,
+          "observation": {
+            "done": false,
+            "reward": -30.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 0,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -30.0
+        },
+        {
+          "step": 37,
+          "solver_response": "{\"command\": \"INSPECT\"}"
+        },
+        {
+          "step": 37,
+          "action": {
+            "metadata": {},
+            "command": "inspect",
+            "target_room": null
+          }
+        },
+        {
+          "step": 38,
+          "observation": {
+            "done": true,
+            "reward": -31.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 1,
+            "room_visited": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, 1, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1],
+              [-1, -1, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, 0, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": -1,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -31.0
+        }
+      ]
+    },
+    {
+      "run_index": 1,
+      "success": true,
+      "total_loss": -8.0,
+      "steps_taken": 2,
+      "max_steps": 30,
+      "encoding": "08890000040a0400000000000",
+      "final_observation": {
+        "done": true,
+        "reward": -8.0,
+        "metadata": {},
+        "current_room": 2,
+        "committed": 1,
+        "failure_last": 0,
+        "room_visited": [1, 1, 1, 0, 0, 0, 0, 0],
+        "room_inspected": [0, 0, 0, 0, 0, 0, 0, 0],
+        "room_known_connects": [
+          [-1, -1, -1, -1, -1, -1, -1, -1],
+          [-1, -1, -1, -1, -1, -1, -1, -1],
+          [-1, -1, -1, -1, -1, -1, -1, -1],
+          [-1, -1, -1, -1, -1, -1, -1, -1],
+          [-1, -1, -1, -1, -1, -1, -1, -1],
+          [-1, -1, -1, -1, -1, -1, -1, -1],
+          [-1, -1, -1, -1, -1, -1, -1, -1],
+          [-1, -1, -1, -1, -1, -1, -1, -1]
+        ],
+        "room_locked": [-1, -1, -1, -1, -1, -1, -1, -1],
+        "room_haskey": [-1, -1, -1, -1, -1, -1, -1, -1],
+        "room_exit": [-1, -1, -1, -1, -1, -1, -1, -1],
+        "current_keys": 0,
+        "actions_remaining": 28,
+        "obs_inspect_weight": 3.0
+      },
+      "conversation_history": [
+        {
+          "step": 0,
+          "observation": {
+            "done": false,
+            "reward": -0.0,
+            "metadata": {},
+            "current_room": 0,
+            "committed": 0,
+            "failure_last": 0,
+            "room_visited": [1, 0, 0, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 0, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 30,
+            "obs_inspect_weight": 3.0
+          },
+          "prompt": "You are solving a Rooms navigation puzzle. Current state (Move 0):\n\nCurrent Room: 0\nPhase: Observation\nKeys Held: 0\nSteps Remaining: 30\n\nRoom Status (1 means true and 0 means false):\nRooms Visited: [1, 0, 0, 0, 0, 0, 0, 0]\nRooms Inspected: [0, 0, 0, 0, 0, 0, 0, 0]\n\nRoom Properties (1 means true and 0 means false for inspected rooms; -1 means unknown):\n- Locked: [-1, -1, -1, -1, -1, -1, -1, -1]\n- Has Key: [-1, -1, -1, -1, -1, -1, -1, -1]\n- Is Exit: [-1, -1, -1, -1, -1, -1, -1, -1]\n\nYou are in a system of up to 8 rooms (indexed 0-7) that are all connected in one graph. Your goal is to find (and if needed, unlock) the exit room and leave.\nOn each turn, you can do one of: MOVE, INSPECT, GETKEY, USEKEY, COMMIT.\nMOVE to move into a room that is connected to your current room. In Observation phase, moving into a room automatically performs the INSPECT action in the room you move to, and you can move through locked rooms, but moves are more costly. In Execution phase, you may not MOVE if your current room is locked, unless it is back to a previous room you have visited.\nINSPECT your current room to know which rooms it connects to, if it is locked, and if it contains a key inside.\nGETKEY to pick-up a key in your current room, if it has a key.\nUSEKEY to use a key in your current room to unlock it if it was locked.\nCOMMIT to change the phase from Observation to Execution. This cannot be undone.\n\nActions in the Observation phase do not use your remaining steps, but are more costly than actions in the Execution phase. \nActions in the Execution phase use one step per action, even if that action fails. If you run out of steps, you fail.\n\nRules and strategy reminders:\n1. In Observation phase:\n   - You can MOVE to any connected room to explore, and automatically INSPECT that room without further command use.\n   - You cannot GETKEY, USEKEY, INSPECT at any time.\n   - COMMIT switches to Execution phase, and you are reset to your starting room.\n   - Keep track of keys, locked rooms, and exits. This information may go away during Execution phase.\n2. In Execution phase:\n   - You may MOVE to adjacent rooms if your current room is unlocked, or if you are moving into a room you have already visited.\n   - INSPECT the current room if it has not been inspected.\n   - USEKEY to unlock a locked room only if you have a key.\n   - GETKEY to pick up a key in the current room if one exists.\n3. The goal is to reach the exit room and unlock it if necessary.\n4. Avoid unnecessary moves that increase weighted steps used.\n\nAvailable commands:\n- MOVE <room_number>: Move to an adjacent room, rooms are numbered 0-7\n- INSPECT: Inspect current room (only in execution phase)\n- USEKEY: Use a key to unlock current room\n- GETKEY: Pick up key in current room\n- COMMIT: Switch from observation to execution phase\n\nRespond only with a JSON object containing your action, for example:\n{\"command\": \"MOVE\", \"target_room\": 1}\nor\n{\"command\": \"INSPECT\"}\nor\n{\"command\": \"USEKEY\"}\nor\n{\"command\": \"GETKEY\"}\nor\n{\"command\": \"COMMIT\"}\n"
+        },
+        {
+          "step": 0,
+          "solver_response": "{\"command\": \"MOVE\", \"target_room\": 1}"
+        },
+        {
+          "step": 0,
+          "action": {
+            "metadata": {},
+            "command": "move",
+            "target_room": 1
+          }
+        },
+        {
+          "step": 1,
+          "observation": {
+            "done": false,
+            "reward": -3.0,
+            "metadata": {},
+            "current_room": 1,
+            "committed": 0,
+            "failure_last": 0,
+            "room_visited": [1, 1, 0, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 1, 0, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, 1, -1, -1, -1, -1, -1, -1],
+              [1, 0, 1, 0, 0, 0, 0, 0],
+              [-1, 1, -1, -1, -1, -1, -1, -1],
+              [-1, 0, -1, -1, -1, -1, -1, -1],
+              [-1, 0, -1, -1, -1, -1, -1, -1],
+              [-1, 0, -1, -1, -1, -1, -1, -1],
+              [-1, 0, -1, -1, -1, -1, -1, -1],
+              [-1, 0, -1, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, 0, -1, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, 0, -1, -1, -1, -1, -1, -1],
+            "room_exit": [-1, 0, -1, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 30,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -3.0
+        },
+        {
+          "step": 1,
+          "solver_response": "{\"command\": \"MOVE\", \"target_room\": 2}"
+        },
+        {
+          "step": 1,
+          "action": {
+            "metadata": {},
+            "command": "move",
+            "target_room": 2
+          }
+        },
+        {
+          "step": 2,
+          "observation": {
+            "done": false,
+            "reward": -6.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 0,
+            "failure_last": 0,
+            "room_visited": [1, 1, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 1, 1, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, 1, 0, -1, -1, -1, -1, -1],
+              [1, 0, 1, 0, 0, 0, 0, 0],
+              [0, 1, 0, 0, 0, 0, 0, 0],
+              [-1, 0, 0, -1, -1, -1, -1, -1],
+              [-1, 0, 0, -1, -1, -1, -1, -1],
+              [-1, 0, 0, -1, -1, -1, -1, -1],
+              [-1, 0, 0, -1, -1, -1, -1, -1],
+              [-1, 0, 0, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, 0, 0, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, 0, 0, -1, -1, -1, -1, -1],
+            "room_exit": [-1, 0, 1, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 30,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -6.0
+        },
+        {
+          "step": 2,
+          "solver_response": "{\"command\": \"COMMIT\"}"
+        },
+        {
+          "step": 2,
+          "action": {
+            "metadata": {},
+            "command": "commit",
+            "target_room": null
+          }
+        },
+        {
+          "step": 3,
+          "observation": {
+            "done": false,
+            "reward": -6.0,
+            "metadata": {},
+            "current_room": 0,
+            "committed": 1,
+            "failure_last": 0,
+            "room_visited": [1, 0, 0, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 0, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 30,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -6.0
+        },
+        {
+          "step": 3,
+          "solver_response": "{\"command\": \"MOVE\", \"target_room\": 1}"
+        },
+        {
+          "step": 3,
+          "action": {
+            "metadata": {},
+            "command": "move",
+            "target_room": 1
+          }
+        },
+        {
+          "step": 4,
+          "observation": {
+            "done": false,
+            "reward": -7.0,
+            "metadata": {},
+            "current_room": 1,
+            "committed": 1,
+            "failure_last": 0,
+            "room_visited": [1, 1, 0, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 0, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 29,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -7.0
+        },
+        {
+          "step": 4,
+          "solver_response": "{\"command\": \"MOVE\", \"target_room\": 2}"
+        },
+        {
+          "step": 4,
+          "action": {
+            "metadata": {},
+            "command": "move",
+            "target_room": 2
+          }
+        },
+        {
+          "step": 5,
+          "observation": {
+            "done": true,
+            "reward": -8.0,
+            "metadata": {},
+            "current_room": 2,
+            "committed": 1,
+            "failure_last": 0,
+            "room_visited": [1, 1, 1, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 0, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 28,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -8.0
+        }
+      ]
+    },
+    {
+      "run_index": 2,
+      "success": true,
+      "total_loss": -4.0,
+      "steps_taken": 1,
+      "max_steps": 30,
+      "encoding": "0890000004080000000000000",
+      "final_observation": {
+        "done": true,
+        "reward": -4.0,
+        "metadata": {},
+        "current_room": 1,
+        "committed": 1,
+        "failure_last": 0,
+        "room_visited": [1, 1, 0, 0, 0, 0, 0, 0],
+        "room_inspected": [0, 0, 0, 0, 0, 0, 0, 0],
+        "room_known_connects": [
+          [-1, -1, -1, -1, -1, -1, -1, -1],
+          [-1, -1, -1, -1, -1, -1, -1, -1],
+          [-1, -1, -1, -1, -1, -1, -1, -1],
+          [-1, -1, -1, -1, -1, -1, -1, -1],
+          [-1, -1, -1, -1, -1, -1, -1, -1],
+          [-1, -1, -1, -1, -1, -1, -1, -1],
+          [-1, -1, -1, -1, -1, -1, -1, -1],
+          [-1, -1, -1, -1, -1, -1, -1, -1]
+        ],
+        "room_locked": [-1, -1, -1, -1, -1, -1, -1, -1],
+        "room_haskey": [-1, -1, -1, -1, -1, -1, -1, -1],
+        "room_exit": [-1, -1, -1, -1, -1, -1, -1, -1],
+        "current_keys": 0,
+        "actions_remaining": 29,
+        "obs_inspect_weight": 3.0
+      },
+      "conversation_history": [
+        {
+          "step": 0,
+          "observation": {
+            "done": false,
+            "reward": -0.0,
+            "metadata": {},
+            "current_room": 0,
+            "committed": 0,
+            "failure_last": 0,
+            "room_visited": [1, 0, 0, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 0, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 30,
+            "obs_inspect_weight": 3.0
+          },
+          "prompt": "You are solving a Rooms navigation puzzle. Current state (Move 0):\n\nCurrent Room: 0\nPhase: Observation\nKeys Held: 0\nSteps Remaining: 30\n\nRoom Status (1 means true and 0 means false):\nRooms Visited: [1, 0, 0, 0, 0, 0, 0, 0]\nRooms Inspected: [0, 0, 0, 0, 0, 0, 0, 0]\n\nRoom Properties (1 means true and 0 means false for inspected rooms; -1 means unknown):\n- Locked: [-1, -1, -1, -1, -1, -1, -1, -1]\n- Has Key: [-1, -1, -1, -1, -1, -1, -1, -1]\n- Is Exit: [-1, -1, -1, -1, -1, -1, -1, -1]\n\nYou are in a system of up to 8 rooms (indexed 0-7) that are all connected in one graph. Your goal is to find (and if needed, unlock) the exit room and leave.\nOn each turn, you can do one of: MOVE, INSPECT, GETKEY, USEKEY, COMMIT.\nMOVE to move into a room that is connected to your current room. In Observation phase, moving into a room automatically performs the INSPECT action in the room you move to, and you can move through locked rooms, but moves are more costly. In Execution phase, you may not MOVE if your current room is locked, unless it is back to a previous room you have visited.\nINSPECT your current room to know which rooms it connects to, if it is locked, and if it contains a key inside.\nGETKEY to pick-up a key in your current room, if it has a key.\nUSEKEY to use a key in your current room to unlock it if it was locked.\nCOMMIT to change the phase from Observation to Execution. This cannot be undone.\n\nActions in the Observation phase do not use your remaining steps, but are more costly than actions in the Execution phase. \nActions in the Execution phase use one step per action, even if that action fails. If you run out of steps, you fail.\n\nRules and strategy reminders:\n1. In Observation phase:\n   - You can MOVE to any connected room to explore, and automatically INSPECT that room without further command use.\n   - You cannot GETKEY, USEKEY, INSPECT at any time.\n   - COMMIT switches to Execution phase, and you are reset to your starting room.\n   - Keep track of keys, locked rooms, and exits. This information may go away during Execution phase.\n2. In Execution phase:\n   - You may MOVE to adjacent rooms if your current room is unlocked, or if you are moving into a room you have already visited.\n   - INSPECT the current room if it has not been inspected.\n   - USEKEY to unlock a locked room only if you have a key.\n   - GETKEY to pick up a key in the current room if one exists.\n3. The goal is to reach the exit room and unlock it if necessary.\n4. Avoid unnecessary moves that increase weighted steps used.\n\nAvailable commands:\n- MOVE <room_number>: Move to an adjacent room, rooms are numbered 0-7\n- INSPECT: Inspect current room (only in execution phase)\n- USEKEY: Use a key to unlock current room\n- GETKEY: Pick up key in current room\n- COMMIT: Switch from observation to execution phase\n\nRespond only with a JSON object containing your action, for example:\n{\"command\": \"MOVE\", \"target_room\": 1}\nor\n{\"command\": \"INSPECT\"}\nor\n{\"command\": \"USEKEY\"}\nor\n{\"command\": \"GETKEY\"}\nor\n{\"command\": \"COMMIT\"}\n"
+        },
+        {
+          "step": 0,
+          "solver_response": "{\"command\": \"MOVE\", \"target_room\": 1}"
+        },
+        {
+          "step": 0,
+          "action": {
+            "metadata": {},
+            "command": "move",
+            "target_room": 1
+          }
+        },
+        {
+          "step": 1,
+          "observation": {
+            "done": false,
+            "reward": -3.0,
+            "metadata": {},
+            "current_room": 1,
+            "committed": 0,
+            "failure_last": 0,
+            "room_visited": [1, 1, 0, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 1, 0, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, 1, -1, -1, -1, -1, -1, -1],
+              [1, 0, 0, 0, 0, 0, 0, 0],
+              [-1, 0, -1, -1, -1, -1, -1, -1],
+              [-1, 0, -1, -1, -1, -1, -1, -1],
+              [-1, 0, -1, -1, -1, -1, -1, -1],
+              [-1, 0, -1, -1, -1, -1, -1, -1],
+              [-1, 0, -1, -1, -1, -1, -1, -1],
+              [-1, 0, -1, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, 0, -1, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, 0, -1, -1, -1, -1, -1, -1],
+            "room_exit": [-1, 1, -1, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 30,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -3.0
+        },
+        {
+          "step": 1,
+          "solver_response": "{\"command\": \"COMMIT\"}"
+        },
+        {
+          "step": 1,
+          "action": {
+            "metadata": {},
+            "command": "commit",
+            "target_room": null
+          }
+        },
+        {
+          "step": 2,
+          "observation": {
+            "done": false,
+            "reward": -3.0,
+            "metadata": {},
+            "current_room": 0,
+            "committed": 1,
+            "failure_last": 0,
+            "room_visited": [1, 0, 0, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 0, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 30,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -3.0
+        },
+        {
+          "step": 2,
+          "solver_response": "{\"command\": \"MOVE\", \"target_room\": 1}"
+        },
+        {
+          "step": 2,
+          "action": {
+            "metadata": {},
+            "command": "move",
+            "target_room": 1
+          }
+        },
+        {
+          "step": 3,
+          "observation": {
+            "done": true,
+            "reward": -4.0,
+            "metadata": {},
+            "current_room": 1,
+            "committed": 1,
+            "failure_last": 0,
+            "room_visited": [1, 1, 0, 0, 0, 0, 0, 0],
+            "room_inspected": [0, 0, 0, 0, 0, 0, 0, 0],
+            "room_known_connects": [
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1],
+              [-1, -1, -1, -1, -1, -1, -1, -1]
+            ],
+            "room_locked": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_haskey": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "room_exit": [-1, -1, -1, -1, -1, -1, -1, -1],
+            "current_keys": 0,
+            "actions_remaining": 29,
+            "obs_inspect_weight": 3.0
+          },
+          "loss": -4.0
+        }
+      ]
+    }
+  ]
+}
+======================================================================
+
+
+✨ Benchmark finished with state: completed

@@ -1,35 +1,25 @@
-from typing import Optional
+from typing import Optional, Any
 import json
 import ast
 import re
 from collections import deque
+import traceback
 
+from a2a.utils import new_agent_text_message, get_message_text
+from a2a.server.tasks import TaskUpdater
 
 class BaselinePurpleAgent:
-    """
-    Baseline purple agent for Neophytic Rooms that solves tutorial-difficulty puzzles
-    and particular easy ones.
-
-    Strategy:
-        Observation phase: BFS explore from room 0, recording real adjacency by
-        watching which rooms become visited after each MOVE. Stop exploring once
-        the exit is found (or all reachable rooms have been visited). Then COMMIT.
-
-        Execution phase: Replay the shortest path (already computed by BFS) from
-        room 0 to the exit. Along the way, pick up any key found in a room that is
-        locked and sits on the path (handles the trivial single-key case).
-    """
-
     def __init__(self):
         self.reset()
 
     def reset(self):
-        # Wipe states, called once per run.
+        print("🟣 [Purple] Resetting state...")
         self.adj: dict[int, set[int]] = {}
         self.room_locked: list[int] = [-1] * 8
         self.room_haskey: list[int] = [-1] * 8
         self.room_exit: list[int] = [-1] * 8
         self.room_visited: list[int] = [0] * 8
+        self.room_inspected: list[int] = [0] * 8
 
         self.current_room: int = 0
         self.obs_visited: set[int] = {0}
@@ -37,6 +27,8 @@ class BaselinePurpleAgent:
         self.obs_parent: dict[int, Optional[int]] = {0: None}
 
         self.exit_room: Optional[int] = None
+        self.known_key_room: Optional[int] = None
+        
         self.path_to_exit: list[int] = []
         self.path_index: int = 0
 
@@ -44,10 +36,53 @@ class BaselinePurpleAgent:
         self.pending_getkey: bool = False
         self.pending_usekey: bool = False
 
+    async def run(self, request: Any, updater: TaskUpdater) -> None:
+        prompt = ""
+        
+        try:
+            prompt = get_message_text(request)
+        except Exception:
+            try:
+                if isinstance(request, str):
+                    prompt = request
+                elif isinstance(request, dict):
+                    if "message" in request:
+                        msg = request["message"]
+                        if isinstance(msg, dict) and "parts" in msg:
+                            prompt = "".join([p.get("text", "") for p in msg["parts"]])
+                        else:
+                            prompt = str(msg)
+                    else:
+                        prompt = str(request)
+                else:
+                    prompt = str(request)
+            except Exception:
+                prompt = str(request)
+
+        if "(Move 0)" in prompt:
+            self.reset()
+
+        print(f"🟣 [Purple] Step Prompt ({len(prompt)} chars). Current Room: {self.current_room}")
+
+        try:
+            action = self.select_action(prompt)
+            print(f"🟣 [Purple] Selected Action: {action}")
+            action_json = json.dumps(action)
+        except Exception as e:
+            print(f"🟣 [Fatal Error] Crash in select_action: {e}")
+            traceback.print_exc()
+            action_json = json.dumps({"command": "INSPECT"})
+
+        try:
+            response_msg = new_agent_text_message(action_json)
+            await updater.complete(message=response_msg)
+        except Exception as e:
+            print(f"🟣 [Error] Failed to send message via updater: {e}")
+            traceback.print_exc()
+
     def _parse_list(self, prompt: str, label: str) -> Optional[list[int]]:
-        """Extract a labeled list field like 'Rooms Visited: [1, 0, 0, ...]'."""
         pattern = rf"{label}:\s*(\[.*?\])"
-        match = re.search(pattern, prompt)
+        match = re.search(pattern, prompt, re.DOTALL)
         if match:
             try:
                 return ast.literal_eval(match.group(1))
@@ -70,6 +105,8 @@ class BaselinePurpleAgent:
             self.room_visited = visited
 
         inspected = self._parse_list(prompt, "Rooms Inspected")
+        if inspected is not None:
+            self.room_inspected = inspected
 
         locked = self._parse_list(prompt, "Locked")
         if locked is not None:
@@ -78,6 +115,9 @@ class BaselinePurpleAgent:
         haskey = self._parse_list(prompt, "Has Key")
         if haskey is not None:
             self.room_haskey = haskey
+            for i, val in enumerate(haskey):
+                if val == 1:
+                    self.known_key_room = i
 
         exit_list = self._parse_list(prompt, "Is Exit")
         if exit_list is not None:
@@ -90,26 +130,52 @@ class BaselinePurpleAgent:
         if phase_match and "Execution" in phase_match.group(1):
             self.has_committed = True
 
-    def _obs_action(self) -> dict:
-        if self.exit_room is not None:
-            self._compute_path()
-            return {"command": "COMMIT"}
+    def _bfs_path(self, start: int, target: int) -> list[int]:
+        """Simple BFS to find path from start to target."""
+        if start == target:
+            return [start]
+        
+        visited = {start}
+        queue = deque([(start, [start])])
+        
+        while queue:
+            node, path = queue.popleft()
+            if node == target:
+                return path
+            
+            for neighbor in self.adj.get(node, set()):
+                if neighbor not in visited:
+                    visited.add(neighbor)
+                    queue.append((neighbor, path + [neighbor]))
+        return []
 
+    def _obs_action(self) -> dict:
+        can_commit = False
+        
+        if self.exit_room is not None:
+            self._plan_solution()
+            path_is_locked = any(self.room_locked[r] == 1 for r in self.path_to_exit)
+            
+            if not path_is_locked:
+                can_commit = True
+            elif self.known_key_room is not None:
+                can_commit = True
+            else:
+                can_commit = False
+                if not self.obs_frontier:
+                    can_commit = True
+
+        if can_commit:
+            return {"command": "COMMIT"}
         if not self.obs_frontier:
-            self._compute_path()
+            self._plan_solution()
             return {"command": "COMMIT"}
 
         target = self.obs_frontier.popleft()
-        return {"command": "MOVE", "target_room": target}
+        return {"command": "MOVE", "target_room": int(target)}
 
     def _record_new_neighbors(self, prev_room: int, prev_visited: list[int]):
-        """After a MOVE in obs phase, figure out which rooms are newly visited.
-
-        In observation phase, MOVE auto-inspects.  The only way a room flips from
-        unvisited to visited is if we successfully moved into it.  So the set
-        difference between old and new room_visited tells us exactly which room
-        we landed in.  That room is a neighbor of prev_room.
-        """
+        """Update adjacency graph based on movement."""
         for i in range(8):
             if self.room_visited[i] == 1 and prev_visited[i] == 0:
                 self.adj.setdefault(prev_room, set()).add(i)
@@ -122,27 +188,43 @@ class BaselinePurpleAgent:
                         if candidate not in self.obs_visited:
                             self.obs_frontier.append(candidate)
 
-
-    def _compute_path(self):
+    def _plan_solution(self):
         if self.exit_room is None:
             self.path_to_exit = []
             return
 
-        visited = {0}
-        queue: deque[tuple[int, list[int]]] = deque([(0, [])])
+        path_direct = self._bfs_path(0, self.exit_room)
+        if not path_direct:
+            self.path_to_exit = []
+            return
 
-        while queue:
-            node, path = queue.popleft()
-            if node == self.exit_room:
-                self.path_to_exit = path
+        locks_on_path = [r for r in path_direct if self.room_locked[r] == 1]
+        
+        key_needed = len(locks_on_path) > 0
+        have_key_on_path = False
+        
+        if self.known_key_room is not None and self.known_key_room in path_direct:
+            key_idx = path_direct.index(self.known_key_room)
+            first_lock_idx = 999
+            if locks_on_path:
+                for r in locks_on_path:
+                    idx = path_direct.index(r)
+                    if idx < first_lock_idx:
+                        first_lock_idx = idx
+            
+            if key_idx < first_lock_idx:
+                have_key_on_path = True
+
+        if key_needed and not have_key_on_path and self.known_key_room is not None:
+            print(f"🟣 [Purple] Planning Detour for Key at {self.known_key_room}")
+            path_to_key = self._bfs_path(0, self.known_key_room)
+            path_from_key = self._bfs_path(self.known_key_room, self.exit_room)
+            
+            if path_to_key and path_from_key:
+                self.path_to_exit = path_to_key + path_from_key[1:]
                 return
-            for neighbor in self.adj.get(node, set()):
-                if neighbor not in visited:
-                    visited.add(neighbor)
-                    queue.append((neighbor, path + [neighbor]))
 
-        self.path_to_exit = []
-
+        self.path_to_exit = path_direct
 
     def _exec_action(self) -> dict:
         if self.pending_getkey:
@@ -152,31 +234,31 @@ class BaselinePurpleAgent:
         if self.pending_usekey:
             self.pending_usekey = False
             return {"command": "USEKEY"}
+        
+        if self.room_haskey[self.current_room] == 1:
+            return {"command": "GETKEY"}
 
-        if self.current_room == self.exit_room:
-            if self.room_locked[self.exit_room] == 1:
-                keys_held = self._current_keys_from_state()
-                if keys_held > 0:
-                    return {"command": "USEKEY"}
-            for neighbor in self.adj.get(self.exit_room, set()):
-                return {"command": "MOVE", "target_room": neighbor}
-            return {"command": "MOVE", "target_room": self.exit_room}
+        if self.room_locked[self.current_room] == 1:
+             return {"command": "USEKEY"}
 
         if self.path_index < len(self.path_to_exit):
-            next_room = self.path_to_exit[self.path_index]
-            self.path_index += 1
+            try:
+                curr_idx_in_path = self.path_to_exit.index(self.current_room)
+                if curr_idx_in_path + 1 < len(self.path_to_exit):
+                    next_room = self.path_to_exit[curr_idx_in_path + 1]
+                    return {"command": "MOVE", "target_room": int(next_room)}
+            except ValueError:
+                pass
 
-            if self.room_haskey[self.current_room] == 1:
-                self.pending_getkey = False
-                self.path_index -= 1 
-                return {"command": "GETKEY"}
-
-            return {"command": "MOVE", "target_room": next_room}
+            if self.path_index + 1 < len(self.path_to_exit):
+                 next_room = self.path_to_exit[self.path_index + 1]
+                 return {"command": "MOVE", "target_room": int(next_room)}
+        if self.current_room == self.exit_room:
+             if self.room_locked[self.current_room] == 1:
+                 return {"command": "USEKEY"}
+             return {"command": "INSPECT"} # Done
 
         return {"command": "INSPECT"}
-
-    def _current_keys_from_state(self) -> int:
-        return 0
 
     def select_action(self, prompt: str) -> dict:
         prev_visited = list(self.room_visited)
@@ -196,15 +278,9 @@ class BaselinePurpleAgent:
                         self.obs_frontier.append(candidate)
 
             return self._obs_action()
-
         else:
             if not self.path_to_exit and self.exit_room is not None:
-                self._compute_path()
-
-            if self.room_locked[self.current_room] == 1:
-                keys = self._current_keys_from_state()
-                if keys > 0:
-                    return {"command": "USEKEY"}
+                self._plan_solution()
 
             return self._exec_action()
 

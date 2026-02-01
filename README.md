@@ -38,9 +38,37 @@ uv sync --extra test
 uv run pytest tests/test_agent.py -v
 ```
 
+## Running with Green Agent
+
+Set up the Neophytic Rooms Green Agent, then run the following.
+
 ```bash
-docker build -t neophytic_purple .
+# in one terminal
+uv run purple-server --host 127.0.0.1 --port 8000
+
+# in the green agent environment, separate terminal
+uv run green-server --host 127.0.0.1 --port 9009
+
+# in another terminal
+python local_run/local_run.py
 ```
 
+A bit of customization is available:
+```bash
+# run 20 tests of hard difficulty using standard systems
+python local_run/local_run.py --count 20 --difficulty hard --no-generate
+
+# generate and run 5 tests of medium difficulty
+python local_run/local_run.py --count 5 --difficulty medium
+```
+
+## Running with Docker
+```bash
+docker build -t neophytic-purple .
+
+docker run --rm neophytic-purple
+```
+
+
 ## About the Baseline
-This the baseline model for the Neophytic Rooms Green Agent and associated benchmark. It attempts to solve the rooms puzzles in a mostly random way and does not perform well. The goal was to test environment and docker connection functionality, rather than create a necessarily powerful algorithm.
+This the baseline model for the Neophytic Rooms Green Agent and associated benchmark. It uses a simple BFS algorithm to attempt to solve tutorial and easy room systems. Mainly meant to demonstrate A2A and Docker conformity rather than act as a good solver.
