@@ -6,18 +6,17 @@ A purple agent creeated for the AgentBeats competition using the template for bu
 
 ```
 src/
-├─ server.py      # Server setup and agent card configuration
-├─ executor.py    # A2A request handling
-├─ agent.py       # Agent implementation
-└─ messenger.py   # A2A messaging utilities
+├─ server.py                  # Server setup and agent card configuration
+├─ executor.py                # A2A request handling
+├─ agent.py                   # Agent implementation
+└─ messenger.py               # A2A messaging utilities
 tests/
-├─ utils.py       # Helper for agent tests
-└─ test_agent.py  # Agent tests
-Dockerfile        # Docker configuration
-pyproject.toml    # Python dependencies
+└─ test_agent.py              # Agent tests
+Dockerfile                    # Docker configuration
+pyproject.toml                # Python dependencies
 .github/
 └─ workflows/
-   └─ test-and-publish.yml # CI workflow
+   └─ test-and-publish.yml    # CI workflow
 ```
 
 ## Getting Started
@@ -31,11 +30,16 @@ uv sync
 uv run purple-server
 ```
 
-```bash
-docker build -t purple-agent .
+## Running Tests Locally
 
-# Preconfigured run (run this first, before starting green agent)
-docker run --rm --name purple-container --network agent-net -p 8000:8000 purple-agent --host 0.0.0.0 --port 8000 --card-url http://purple-container:8000
+```bash
+uv sync --extra test
+
+uv run pytest tests/test_agent.py -v
+```
+
+```bash
+docker build -t neophytic_purple .
 ```
 
 ## About the Baseline
